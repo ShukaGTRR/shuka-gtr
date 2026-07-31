@@ -224,39 +224,7 @@
 </main>
 
 <!-- ===== SHOP SETTINGS MODAL ===== -->
-<div class="modal-backdrop" id="settingsBackdrop" hidden>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
-    <h3 id="settingsTitle">Shop details</h3>
-    <p class="modal__hint">Used on printed receipts.</p>
-    <label class="field">
-      <span>Shop name</span>
-      <input type="text" id="settingsShopName">
-    </label>
-    <label class="field">
-      <span>Phone</span>
-      <input type="text" id="settingsShopPhone">
-    </label>
-    <label class="field">
-      <span>Address</span>
-      <input type="text" id="settingsShopAddress">
-    </label>
-    <div class="modal__actions">
-      <button class="btn btn--ghost" id="settingsCancelBtn" type="button">Cancel</button>
-      <button class="btn btn--primary" id="settingsSaveBtn" type="button">Save</button>
-    </div>
-  </div>
-</div>
 
-<!-- ===== RECEIPT PRINT AREA ===== -->
-<div class="modal-backdrop" id="receiptBackdrop" hidden>
-  <div class="modal modal--receipt">
-    <div id="receiptContent" class="receipt"></div>
-    <div class="modal__actions modal__actions--noprint">
-      <button class="btn btn--ghost" id="receiptCloseBtn" type="button">Close</button>
-      <button class="btn btn--primary" id="receiptPrintBtn" type="button">Print</button>
-    </div>
-  </div>
-</div>
 
 <script src="app.js" type="module"></script>
 </body>
