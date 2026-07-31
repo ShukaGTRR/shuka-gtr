@@ -429,15 +429,4 @@ ul{ list-style:none; margin:0; padding:0; }
   .entry__amount{ text-align:left; }
   .entry__badges{ justify-content:flex-start; }
 }
-
-/* =========================================================
-   PRINT (receipt only)
-   ========================================================= */
-@media print{
-  body *{ visibility: hidden; }
-  .receipt, .receipt *{ visibility: visible; }
-  .receipt{ position: absolute; top:0; left:0; width: 100%; }
-  .modal-backdrop{ background: transparent; position: static; padding:0; }
-  .modal{ box-shadow:none; max-width:none; }
-  .modal__actions--noprint{ display:none; }
 }
