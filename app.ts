@@ -200,39 +200,7 @@ function renderHomeNet() {
     );
   }
 
-  empty.hidden = items.length > 0;
-  list.innerHTML = items.map(loan => {
-    const badge = loan.returned
-      ? `<span class="badge badge--returned">Returned</span>`
-      : `<span class="badge badge--owed">Owed</span>`;
-    const meta: string[] = [
-      escapeHtml(loan.cardType),
-      formatDate(loan.date),
-    ];
-    if (loan.customerPhone) meta.push(escapeHtml(loan.customerPhone));
-    if (loan.dueDate) meta.push('due ' + formatDate(loan.dueDate));
-    if (loan.cardCode) meta.push('#' + escapeHtml(loan.cardCode));
 
-    return `
-      <li class="entry ${loan.returned ? 'entry--returned' : ''}" data-id="${loan.id}">
-        <div class="entry__main">
-          <span class="entry__name">${escapeHtml(loan.customerName)}</span>
-          <span class="entry__meta">${meta.map(m => `<span>${m}</span>`).join('')}</span>
-          ${loan.notes ? `<span class="entry__notes">${escapeHtml(loan.notes)}</span>` : ''}
-        </div>
-        <div>
-          <div class="entry__amount">${formatAmount(loan.amount)}</div>
-          <div class="entry__badges">${badge}</div>
-        </div>
-        <div class="entry__actions">
-          <button data-action="toggle-return" data-id="${loan.id}">${loan.returned ? 'Mark not returned' : 'Mark returned'}</button>
-          <button data-action="edit-loan" data-id="${loan.id}">Edit</button>
-          <button data-action="print-loan" data-id="${loan.id}">Print receipt</button>
-          <button data-action="delete-loan" data-id="${loan.id}" class="btn--danger-text">Delete</button>
-        </div>
-      </li>`;
-  }).join('');
-}
 
 /* =========================================================
    REGULAR BORROWERS
